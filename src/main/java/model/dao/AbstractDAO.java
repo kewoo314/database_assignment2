@@ -9,7 +9,7 @@ import java.sql.DriverManager;
 public abstract class AbstractDAO<E extends AbstractEntity> {
     protected String ConUrl = "jdbc:mysql://localhost";
     protected String Port = "3306";
-    protected String Database = "world_db";
+    protected String Database = "test";
     protected String Username = "root";
     protected String Password = "isaacreborn1";
 
@@ -20,16 +20,13 @@ public abstract class AbstractDAO<E extends AbstractEntity> {
         return con;
     }
 
-    public void setTestDatabase(){
-        this.Database = "test";
-    }
-
     public abstract void create(E entity) throws SQLException;
 
     public abstract void create(Business entity) throws SQLException;
 
     public abstract E read(int id) throws SQLException;
     public abstract void update(E entity) throws SQLException;
+
     public abstract void delete(E entity) throws SQLException;
 
 }
